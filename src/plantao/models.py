@@ -165,8 +165,7 @@ class Ocorrencia(models.Model):
         self.final = self.final_prop
         # seta automaticamente a ultima_data do plantao associado
         # caso isso ja nao tenha sido feito.
-        if self.plantao.ultima_data == None
-        or self.inicio > self.plantao.ultima_data:
+        if self.plantao.ultima_data == None or self.inicio > self.plantao.ultima_data:
             self.plantao.ultima_data = self.inicio
             self.plantao.save()
         super(Ocorrencia, self).save(*args, **kwargs)
